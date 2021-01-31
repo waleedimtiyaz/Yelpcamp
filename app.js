@@ -16,8 +16,14 @@ var commentRoutes    = require("./routes/comments"),
 
 
 // seedDB();
-mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb+srv://waleed:0KE5fEVnkHCOvIjz@cluster0.a02lv.mongodb.net/yelpcamp?retryWrites=true&w=majority',{useNewUrlParser: true});
+// mongoose.set('useFindAndModify', false);
+mongoose.connect('mongodb+srv://waleed:0KE5fEVnkHCOvIjz@cluster0.a02lv.mongodb.net/yelpcamp?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: true
+    // useUnifiedTopology: true
+});
+
 // mongoose.connect('mongodb://localhost:27017/yelp_camp', {useNewUrlParser: true});
 // mongodb+srv://waleed:0KE5fEVnkHCOvIjz@cluster0.a02lv.mongodb.net/yelpcamp?retryWrites=true&w=majority
 

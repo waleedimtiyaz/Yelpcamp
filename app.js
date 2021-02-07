@@ -23,10 +23,9 @@ var commentRoutes    = require("./routes/comments"),
 //     useCreateIndex: true,
 //     useFindAndModify: false
 // });
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp"
+mongoose.connect(url, {useNewUrlParser: true});
 
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
-// mongodb+srv://waleed:0KE5fEVnkHCOvIjz@cluster0.a02lv.mongodb.net/yelpcamp?retryWrites=true&w=majority
-// mongodb://localhost:27017/yelp_camp
 
 
 app.use(bodyParser.urlencoded({extended: true}));

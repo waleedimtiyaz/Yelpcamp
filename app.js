@@ -16,16 +16,18 @@ var commentRoutes    = require("./routes/comments"),
 
 
 // seedDB();
-// mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb+srv://waleed:0KE5fEVnkHCOvIjz@cluster0.a02lv.mongodb.net/yelpcamp?retryWrites=true&w=majority',{
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-});
 
-// mongoose.connect('mongodb://localhost:27017/yelp_camp', {useNewUrlParser: true});
+// mongoose.set('useFindAndModify', false);
+// mongoose.connect('mongodb+srv://waleed:0KE5fEVnkHCOvIjz@cluster0.a02lv.mongodb.net/yelpcamp?retryWrites=true&w=majority',{
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false
+// });
+
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 // mongodb+srv://waleed:0KE5fEVnkHCOvIjz@cluster0.a02lv.mongodb.net/yelpcamp?retryWrites=true&w=majority
+// mongodb://localhost:27017/yelp_camp
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
